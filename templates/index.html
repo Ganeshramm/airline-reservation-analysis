@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Marketing Analysis</title>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<section class="search-banner text-white py-3 form-arka-plan" id="search-banner">
+    <div class="container py-5 my-5">
+        <div class="row text-center pb-4">
+            <div class="col-md-12">
+                <h2 class="text-white siyah-cerceve">Customer Ticket Booking Prediction</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card acik-renk-form">
+                    <div class="card-body">
+                      <form action="{{ url_for('predict')}}"method="post">
+                        <div class="row">
+                        {{ hii }}
+                            <div class="col-md-4">
+			        {{ hi }}
+                                <div class="form-group ">
+                                <label for="msld">Month since lead generated</label>
+                                    <select id="msld" name="msld" class="form-control" >
+                                        <option value =1>1</option>
+                                        <option value =2>2</option>
+                                        <option value =3>3</option>
+                                        <option value =4>4</option> 
+                                        <option value =5>5</option>
+                                        <option value =6>6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group ">
+                                <label for="lgc" >Lead-gen-channel</label>
+                                    <select id="lgc" name="lgc" class="form-control" >
+                                        <option value =1>Network</option>
+                                        <option value =0>Direct</option>
+                                        <option value =2>Organic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="gender" >Gender</label>
+                                    <select id="gender" name="gender" class="form-control" >
+                                       
+                                        <option value =1>Male</option>
+                                        <option value =0>Female</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group ">
+                                  <div class="input-group">
+	                              <input type="number" class="form-control" name="age" id="age"  placeholder="Age"/>
+			          </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="city" >city</label>
+                                    <select id="city" name="city" class="form-control" >
+                                        <option value =1>Bangalore</option>
+                                        <option value =6>Hyderabad</option>
+                                        <option value =8>Mumbai</option>
+                                        <option value =10>Surat</option> 
+                                        <option value =5>Delhi</option>
+					<option value =9>New Delhi</option>
+                                        <option value =3>Chandigarh</option>                                        
+                                        <option value =2>Cochin</option>
+                                        <option value =4>Chennai</option>
+                                        <option value =0>Ahmedabad</option>
+                                        <option value =7>Kolkatta</option> 
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="loyalty" >Airline loyalty</label>
+                                    <select id="loyalty" name="loyalty" class="form-control" >
+                                       
+                                        <option value =0>none</option>
+                                        <option value =1>base</option>
+                                        <option value =2>silver</option>
+                                        <option value =3>gold</option>
+                                        <option value =4>platinum</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+   
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="passengers" >selected Passengers</label>
+                                    <select id="passengers" name="passengers" class="form-control" >
+                                        
+                                        <option value =1>1</option>
+                                        <option value =2>2</option>
+                                        <option value =3>3</option>
+                                        <option value =4>4</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="6months" >Enquired in last 6 months</label>
+                                    <select id="6months" name="6months" class="form-control" >
+                                    
+                                        <option value =1>Yes</option>
+                                        <option value =0>No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                                            
+                            <div class="col-md-4">
+                                <div class="form-group "><label for="3months" >Active in last 3 months</label>
+                                    <select id="3months" name="3months" class="form-control" >
+            
+                                        <option value =1>Yes</option>
+                                        <option value =0>No</option>
+                                    </select>
+                                </div>
+                            </div>                
+                        </div>
+             
+                        <div class="row">
+   
+                            <div class="col-md-12" style="text-align:center;">
+                                <button type="submit" class="btn btn-warning  pl-5 pr-5">Predict</button>
+			      
+			<br>
+    			<br>
+			{{ prediction_text }}
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+<div class="col-md-12">
+                <h2 class="text-white siyah-cerceve">Marketing Analysis</h2>
+            </div>
+</section>
+</body>
+
+</html>
+
+<style>
+.firma-ara{
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.form-group{
+  padding : 15px;	
+}
+.form-arka-plan{
+    background-image: url("https://gos3.ibcdn.com/flight-1550057390.jpg?format=jpeg&quality=50");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.acik-renk-form{
+    background: rgba(255, 255, 255, 0.58);
+}
+.siyah-cerceve{
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+</style>
